@@ -1,17 +1,19 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-import qualified Data.Text.IO as T
 import           Control.Exception
+import qualified Data.Text.IO as T
+import           Data.Time
 import           Formatting
 import           Formatting.Clock
 import           System.Clock
-import           Data.Time
-import           Formatting
+import           System.IO
 
 main :: IO ()
 main = do
   start0 <- getTime Monotonic
+  hSetBuffering stdout LineBuffering
+  hSetBuffering stdin LineBuffering
   let loop start = do
         line <- T.getLine
         end <- getTime Monotonic
