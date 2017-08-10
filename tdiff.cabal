@@ -1,0 +1,22 @@
+name:                tdiff
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/chrisdone/tdiff#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Chris Done
+maintainer:          chrisdone@gmail.com
+copyright:           2015 Chris Done
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+executable tdiff
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , time, formatting, clock, text
+  default-language:    Haskell2010
